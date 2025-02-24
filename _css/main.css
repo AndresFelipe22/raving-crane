@@ -1,244 +1,237 @@
 /* Reset y variables */
 :root {
-    --primary-color: #000000;
-    --secondary-color: #333333;
-    --background-color: #f8f8f8;
-    --border-color: #e5e5e5;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --text-color: #333333;
-    --input-background: #ffffff;
+  --primary-color: #000000;
+  --secondary-color: #333333;
+  --background-color: #f8f8f8;
+  --border-color: #e5e5e5;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --text-color: #333333;
+  --input-background: #ffffff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilos base */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.5;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.container-carry{
-    border: 2px solid rgba(114, 11, 11, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
 /* Header */
 .app-header {
-    background: var(--input-background);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  background: var(--input-background);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .app-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  /* Aseguramos que la marca y el menú queden separados */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .brand {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-color);
 }
 
-.menu-button {
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.listaMenu {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  margin-left: 50px;
 }
 
-/* Main Content */
+.listaMenu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.25rem;
+  margin-right: 12px;
+}
+
+/* MAIN CONTENT */
 .main-content {
-    padding: 5rem 1rem 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+  display: flex;
+  width: 100%;
+  padding: 5rem 1rem 1rem;
+  height: calc(100vh - 5rem);
+  box-sizing: border-box;
 }
 
-/* Location Inputs */
+.container-carry {
+  width: 300px;
+  background: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 1rem;
+  margin-right: 1rem;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
 .location-inputs {
-    background: var(--input-background);
-    border-radius: 4px;
-    padding: 0.3rem;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 .input-wrapper {
-    display: flex;
-    width: 50px;
-    height: 30px;
-    align-items: center;
-    padding: 0.2rem;
-    border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .input-wrapper:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .location-icon {
-    margin-right: 1rem;
-    color: var(--secondary-color);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('../img/compass-solid.svg') no-repeat center center;
+  background-size: contain;
+  margin-right: 0.5rem;
 }
 
 .location-input {
-    border: none;
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: transparent;
+  border: none;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: transparent;
 }
 
 .location-input:focus {
-    outline: none;
+  outline: none;
 }
 
-/* Action Buttons */
 .action-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
-.time-button,
-.user-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: var(--input-background);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.time-button, .user-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('../icons/time.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.user-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('../img/circle-user-solid.svg') no-repeat center center;
+  background-size: contain;
 }
 
 .time-button:hover,
 .user-button:hover {
-    background: var(--border-color);
+  background: var(--border-color);
 }
 
-/* Map Section */
+.search-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MAPA */
 .map-section {
-    background: var(--border-color);
-    height: 200px;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    overflow: hidden;
+  background-image: url(../img/mapa.png);
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out;
+  height: 740px; /* Altura predeterminada */
 }
 
-/* Service Types */
-.service-types {
-    background: var(--input-background);
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px var(--shadow-color);
-}
-
-.service-types h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-.service-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-2px);
-}
-
-.service-item img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 0.5rem;
-}
-
-.service-item span {
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .action-buttons {
-        flex-direction: column;
-    }
-
-    .time-button,
-    .user-button {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .main-content {
-        padding: 4rem 0.5rem 1rem;
-    }
-
-    .service-item img {
-        width: 36px;
-        height: 36px;
-    }
-
-    .brand {
-        font-size: 1.1rem;
-    }
-}
-
-/* Animaciones */
+/* Animación fadeIn */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.location-inputs,
-.action-buttons,
-.service-types {
-    animation: fadeIn 0.3s ease-out;
+/* MEDIA QUERIES PARA RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .main-content {
+    /* Se apilan el panel y el mapa */
+    flex-direction: column;
+    height: auto;
+    padding: 5rem 1rem 5rem;
+  }
+
+  .container-carry {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* Mapa con altura reducida para tablet y celular */
+  .map-section {
+    height: 250px;
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 4rem;
+  }
+
+  /* Menú inferior fijo en dispositivos pequeños */
+  .menuPrincipal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--input-background);
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
+
+  .listaMenu {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0;
+  }
 }

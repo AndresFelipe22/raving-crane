@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ranving Crane</title>
+  <link rel="stylesheet" href="./_css/main.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container">
+      <div class="brand">Ranving Crane</div>
+      <button id="abrir" class="abrirMenu"><i class="bi bi-list"></i></button>
+      <nav class="menuPrincipal" id="menu">
+        <button id="cerrar" class="cerrarMenu"><i class="bi bi-x-lg"></i></button>
+        <ul class="listaMenu">
+          <li><a href="#">Informacion</a></li>
+          <li><a href="#">Viaje</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="/">Ingresar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container-carry">
+      <div class="location-inputs">
+        <div class="input-wrapper">
+          <span class="location-icon"></span>
+          <input type="text" class="location-input" id="pickupLocation" placeholder="Ubicación de recogida">
+        </div>
+        <div class="input-wrapper">
+          <span class="location-icon"></span>
+          <input type="text" class="location-input" id="dropLocation" placeholder="Ubicación de destino">
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="time-button" id="timeButton">
+          <span class="time-icon"></span>
+          Recoger ya
+        </button>
+        <button class="user-button" id="userButton">
+          <span class="user-icon"></span>
+          Para mí
+        </button>
+      </div>
+      <button class="search-button">Buscar</button>
+    </div>
+    <div class="map-section" id="map"></div>
+  </main>
+
+  <script src="./_js/script.js"></script>
+</body>
+</html>

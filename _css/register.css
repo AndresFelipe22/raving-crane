@@ -1,0 +1,176 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+  body {
+    background-image: url(..//img/body\ fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+  }
+  .mainContainer {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+  }
+  .backBox {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 219, 13, 0.5);
+  }
+  .backBox div {
+    margin: 100px 40px;
+    color: rgb(0, 0, 0);
+    transition: all 500ms;
+  }
+  .backBox div p, 
+  .backBox div button {
+    margin-top: 30px;
+  }
+  .backBox div h3 {
+    font-weight: 400;
+    font-size: 26px;
+  }
+  .backBox button {
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    outline: none;
+    transition: all 300ms;
+  }
+  .backBox button:hover {
+    background: #fff;
+    color: black;
+  }
+  
+  /* Formularios */
+  .loginRegister {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  }
+  .loginRegister form {
+    width: 100%;
+    padding: 80px 20px;
+    background: rgb(94, 93, 93);
+    position: absolute; 
+    border-radius: 20px;
+  }
+  .loginRegister form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .loginRegister form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+  }
+  .loginRegister form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255, 219, 13, 0.5);
+    color: black;
+    cursor: pointer;
+    outline: none;
+  }
+  .loginForm, .registerForm {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+  }
+  .loginForm.active, .registerForm.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+  }
+  
+  /* Responsive: Pantallas hasta 850px */
+  @media screen and (max-width:850px) {
+    main {
+      margin-top: 50px;
+    }
+    .mainContainer {
+      max-width: 100%;
+    }
+    .backBox {
+      max-width: 350px;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      padding: 20px;
+    }
+    .backBox div {
+      margin: 10px 0;
+      position: static;
+      text-align: center;
+    }
+    /* Reacomodar los formularios en columna */
+    .loginRegister {
+      position: static;
+      width: 100%;
+      max-width: 350px;
+      margin: 20px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .loginRegister form {
+      position: static;
+      width: 90%;
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    /* Si ambas opciones están presentes (login y registro),
+       forzamos que el formulario de registro se muestre también */
+    body.both-active .registerForm {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+    }
+    
+    /* Si solo se muestra la opción de registrarse,
+       forzamos que el formulario de registro no desaparezca y se ubique abajo */
+    body.only-register .registerForm {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+      margin-top: 20px;
+    }
+  }
+  
